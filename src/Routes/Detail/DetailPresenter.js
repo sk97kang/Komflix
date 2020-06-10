@@ -92,7 +92,11 @@ const DetailPresenter = ({ result, loading, error }) =>
         <title>{result.title ? result.title : result.name} | Komflix</title>
       </Helmet>
       <Backdrop
-        bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
+        bgImage={
+          result.backdrop_path
+            ? `https://image.tmdb.org/t/p/original${result.backdrop_path}`
+            : `https://image.tmdb.org/t/p/original${result.poster_path}`
+        }
       />
       <Content>
         <Cover
@@ -136,5 +140,11 @@ const DetailPresenter = ({ result, loading, error }) =>
       </Content>
     </Container>
   );
+
+DetailPresenter.propTypes = {
+  result: PropTypes.object,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.string,
+};
 
 export default DetailPresenter;

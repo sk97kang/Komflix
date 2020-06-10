@@ -66,6 +66,11 @@ yarn add axios
 yarn add react-helmet
 ```
 
-# Container Presenter Pattern
+## Container Presenter Pattern
 
 - Container(Logic)과 Presenter(UI)를 분리
+
+# Version
+
+- v1.0 : 최조 Release
+- v1.1 : TV Detail Error 수정

@@ -22,7 +22,6 @@ export default class extends React.Component {
         params: { id },
       },
       history: { push },
-      location: { pathname },
     } = this.props;
     const { isMovie } = this.state;
     const parseId = Number(id);
@@ -35,7 +34,7 @@ export default class extends React.Component {
       if (isMovie) {
         ({ data: result } = await moviesApi.movieDetail(parseId));
       } else {
-        ({ data: result } = await moviesApi.showDetail(parseId));
+        ({ data: result } = await tvApi.showDetail(parseId));
       }
     } catch {
       this.setState({ error: "Can't find anything" });
